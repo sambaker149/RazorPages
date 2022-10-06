@@ -1,0 +1,29 @@
+﻿@page
+@model InputNameModel
+@{
+    ViewData["Title"] = "Input Name & Email";
+}
+
+<header class="text-center">
+    <h1 class="display-4">Razor Page Test 1</h1>
+    <h2>Input Full Name & Email Address</h2>
+</header>
+
+<section>
+    <form method="post" class="mx-auto" style="width:200px">
+        <p class="col-sm-2">
+            <label for="name">Full Name</label>
+            <input type="text" required="true" asp-for="FullName"/>
+        </p>
+        <p class="col-sm-4">
+            <label for="email">Email Address</label>
+            <input type="email" required="true" asp-for="Email"/>
+        </p>
+        <p class="col-sm-2">
+            <button type="submit" class="btn btn-success">Submit</button>
+        </p>
+        <p class="col-sm-12"></button>
+            @ViewData["Message"]
+        </p>
+    </form>
+</section>
