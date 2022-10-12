@@ -13,17 +13,22 @@
     <form method="post" class="mx-auto" style="width:200px">
         <p class="col-sm-2">
             <label for="name">Full Name</label>
-            <input type="text" required="true" asp-for="FullName"/>
+            <input type="text" required="true" asp-for="FullName" 
+            placeholder="Your Full Name"/>
         </p>
         <p class="col-sm-4">
             <label for="email">Email Address</label>
-            <input type="email" required="true" asp-for="Email"/>
+            <input type="email" required="true" asp-for="Email" 
+            placeholder="Your Email Address"/>
         </p>
         <p class="col-sm-2">
             <button type="submit" class="btn btn-success">Submit</button>
         </p>
-        <p class="col-sm-12"></button>
+        <p class="lead alert alert-primary">
             @ViewData["Message"]
+        </p>
+        <p>
+            <button class="btn btn-primary" asp-page="/Index">Return to Index</button>
         </p>
     </form>
 </section>

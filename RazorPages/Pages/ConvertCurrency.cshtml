@@ -1,0 +1,48 @@
+﻿@page
+@model RazorPages.Pages.ConvertCurrencyModel
+@{
+    ViewData["Title"] = "Convert Currency";
+}
+
+<header class="text-center">
+    <h1 class="display-4">Razor Page Test 2</h1>
+    <h2>Currency Converter</h2>
+</header>
+
+<section>
+    <form method="post" class="mx-auto" style="width:200px">
+        <p class="col-sm-2">
+            <label for="OriginalCurrency">Original Currency</label>
+            <select asp-for="OriginalCurrency" required="true">
+                <option>Select Original Currency</option>
+                <option>@ConvertCurrencyModel.CurrencyChoice.Pounds</option>
+                <option>@ConvertCurrencyModel.CurrencyChoice.Dollars</option>
+                <option>@ConvertCurrencyModel.CurrencyChoice.Euros</option>
+            </select>
+        </p>
+        <label for="CurrencyAmount">Amount to Convert</label>
+        <p class="col-sm-2">
+            <input asp-for="CurrencyAmount" type="text" required="true" 
+            placeholder="Please Enter Amount to Convert"/>
+        </p>
+        <p class="col-sm-2">
+            <label for="NewCurrency">New Currency</label>
+            <select asp-for="NewCurrency" required="true">
+                <option>Select New Currency</option>
+                <option>@ConvertCurrencyModel.CurrencyChoice.Pounds</option>
+                <option>@ConvertCurrencyModel.CurrencyChoice.Dollars</option>
+                <option>@ConvertCurrencyModel.CurrencyChoice.Euros</option>
+            </select>
+        </p>
+        <p class="col-sm-2">
+            <button type="submit" class="btn btn-success">Convert</button>
+        </p>
+        <br/>
+       <p class="lead alert alert-primary">
+            @ViewData["Message"]
+        </p>
+        <p>
+            <button class="btn btn-primary" asp-page="/Index">Return to Index</button>
+        </p>
+    </form>
+</section>

@@ -18,7 +18,7 @@ namespace RazorPages.Pages
 
         public void OnGet()
         {
-
+            ViewData["Message"] = "Please Fill Out all Fields";
         }
 
         public void OnPost()
